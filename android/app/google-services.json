@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "726872289205",
+    "project_id": "paguei-5e56b",
+    "storage_bucket": "paguei-5e56b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726872289205:android:08af7cc4457e818699b3fc",
+        "android_client_info": {
+          "package_name": "com.leonardo.melembra.melembra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726872289205-7ti33ldpbppupiu3olfv5hj22jk5lm9e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.leonardo.melembra.melembra",
+            "certificate_hash": "33a4383202a6d05ed24f45c1ddd7f574dcee8de5"
+          }
+        },
+        {
+          "client_id": "726872289205-icknjml3u9p8lud8sotdvlk7sk65k7f4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqaMxWtZ3uEPoYHsYBxksidOlon65pTws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726872289205-icknjml3u9p8lud8sotdvlk7sk65k7f4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

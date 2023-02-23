@@ -1,19 +1,25 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import '../../domain/entities/user.dart' as domain;
 import 'package:melembra/infra/datasources/i_authentication_data_source.dart';
 
 class FirebaseAuthenticationDataSource implements IAuthenticationDataSource {
 
   final FirebaseAuth _firebaseAuth;
-  final GoogleAuthProvider _googleAuthProvider;
+  final GoogleSignIn _googleSignIn;
 
   FirebaseAuthenticationDataSource(
-      this._firebaseAuth, this._googleAuthProvider);
+      this._firebaseAuth, this._googleSignIn);
 
   @override
   Future<domain.User> signInWithGoogleAccount() async {
-    final userCredential = await _firebaseAuth.signInWithPopup(_googleAuthProvider);
-    final user = await _firebaseAuth.signInWithCredential(userCredential.credential!);
+    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+    final user = await _firebaseAuth.signInWithCredential(credential);
     return domain.User(
         id: user.user!.uid,
         name: user.user!.displayName!,
@@ -24,7 +30,7 @@ class FirebaseAuthenticationDataSource implements IAuthenticationDataSource {
 
   @override
   Future<bool> signOut() {
-    return _firebaseAuth.signOut().then((value) => true);
+    return Future.value([_googleSignIn.signOut(), _firebaseAuth.signOut()]).then((value) => true);
   }
 
 }
