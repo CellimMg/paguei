@@ -18,4 +18,9 @@ class AuthenticationRepositoryImpl implements IAuthenticationRepository{
   Future<bool> signOut() async {
     return await _authenticationDataSource.signOut();
   }
+
+  @override
+  bool alreadySignedIn() {
+    return _authenticationDataSource.alreadySignedIn();
+  }
 }

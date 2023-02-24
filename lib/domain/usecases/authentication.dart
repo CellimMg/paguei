@@ -14,4 +14,8 @@ class Authentication {
   Future<bool> signOut() async {
     return await _repository.signOut();
   }
+
+  bool alreadySignedIn() {
+    return _repository.alreadySignedIn();
+  }
 }

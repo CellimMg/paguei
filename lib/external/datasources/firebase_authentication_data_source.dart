@@ -33,4 +33,9 @@ class FirebaseAuthenticationDataSource implements IAuthenticationDataSource {
     return Future.value([_googleSignIn.signOut(), _firebaseAuth.signOut()]).then((value) => true);
   }
 
+  @override
+  bool alreadySignedIn() {
+    return _firebaseAuth.currentUser != null;
+  }
+
 }
