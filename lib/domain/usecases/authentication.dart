@@ -15,6 +15,10 @@ class Authentication {
     return await _repository.signOut();
   }
 
+  User getCurrentUser() {
+    return _repository.getCurrentUser();
+  }
+
   bool alreadySignedIn() {
     return _repository.alreadySignedIn();
   }

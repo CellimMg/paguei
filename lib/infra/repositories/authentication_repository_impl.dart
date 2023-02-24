@@ -23,4 +23,9 @@ class AuthenticationRepositoryImpl implements IAuthenticationRepository{
   bool alreadySignedIn() {
     return _authenticationDataSource.alreadySignedIn();
   }
+
+  @override
+  User getCurrentUser() {
+    return _authenticationDataSource.getCurrentUser();
+  }
 }

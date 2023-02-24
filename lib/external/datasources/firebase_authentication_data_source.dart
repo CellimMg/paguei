@@ -38,4 +38,15 @@ class FirebaseAuthenticationDataSource implements IAuthenticationDataSource {
     return _firebaseAuth.currentUser != null;
   }
 
+  @override
+  domain.User getCurrentUser() {
+    final user = _firebaseAuth.currentUser;
+    return domain.User(
+        id: user!.uid,
+        name: user.displayName!,
+        email: user.email!,
+        pictureUrl: user.photoURL!
+    );
+  }
+
 }

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:melembra/domain/entities/user.dart' as domain;
 import 'package:melembra/domain/repositories/i_authentication_repository.dart';
 
 import '../domain/usecases/authentication.dart';
