@@ -7,9 +7,7 @@ import 'package:melembra/utils/providers.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   setupLocators();
-
   runApp(const PagueiApp());
 }
 
