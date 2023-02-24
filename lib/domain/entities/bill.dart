@@ -3,6 +3,7 @@ class Bill{
   final String description;
   final double value;
   final DateTime dueDate;
+  final bool deleted;
   final RepeatFrequency repeatFrequency;
 
   Bill({
@@ -11,6 +12,7 @@ class Bill{
     required this.value,
     required this.dueDate,
     required this.repeatFrequency,
+    this.deleted = false,
   });
 
   factory Bill.fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,7 @@ class Bill{
       value: json['value'],
       dueDate: DateTime.parse(json['dueDate']),
       repeatFrequency: json['repeatFrequency'],
+      deleted: json['deleted'],
     );
   }
 
@@ -30,6 +33,7 @@ class Bill{
       'value': value,
       'dueDate': dueDate.millisecondsSinceEpoch,
       'repeatFrequency': repeatFrequency.name,
+      'deleted': deleted,
     };
   }
 }
