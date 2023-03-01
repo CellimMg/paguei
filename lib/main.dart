@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:melembra/presenter/authentication/page/authentication_page.dart';
+import 'package:melembra/presenter/wrapper/wrapper.dart';
 import 'package:melembra/utils/providers.dart';
 
 Future<void> main() async {
@@ -27,7 +28,7 @@ class _PagueiAppState extends State<PagueiApp> {
         fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
-      home: AuthenticationPage(),
+      home: Wrapper(),
     );
   }
 }
