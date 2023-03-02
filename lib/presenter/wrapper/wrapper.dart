@@ -12,10 +12,21 @@ class Wrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if(authentication.alreadySignedIn()){
-      return const Home();
-    } else {
-      return AuthenticationPage();
-    }
+    return StreamBuilder(
+      stream: authentication.user,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        } else if (snapshot.hasData) {
+          return const Home();
+        } else {
+          return AuthenticationPage();
+        }
+      },
+    );
   }
 }

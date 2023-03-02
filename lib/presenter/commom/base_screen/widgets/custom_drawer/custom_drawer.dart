@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:melembra/presenter/authentication/page/authentication_page.dart';
 import 'package:melembra/utils/providers.dart';
 
 import '../../../../../domain/usecases/authentication.dart';
@@ -92,9 +93,12 @@ class CustomDrawer extends StatelessWidget {
             indent: 20,
             endIndent: 20,
           ),
-          const ListTile(
-            leading: Icon(Icons.logout, color: Color(0xff3072F2),),
-            title: Text('Sair'),
+          ListTile(
+            onTap: (){
+              getIt<Authentication>().signOut();
+            },
+            leading: const Icon(Icons.logout, color: Color(0xff3072F2),),
+            title: const Text('Sair'),
           ),
         ],
       ),

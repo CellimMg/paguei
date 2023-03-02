@@ -28,4 +28,8 @@ class AuthenticationRepositoryImpl implements IAuthenticationRepository{
   User getCurrentUser() {
     return _authenticationDataSource.getCurrentUser();
   }
+
+  @override
+  // TODO: implement user
+  Stream<User> get user => _authenticationDataSource.getUser();
 }

@@ -5,4 +5,5 @@ abstract class IAuthenticationRepository {
   Future<bool> signOut();
   bool alreadySignedIn();
   User getCurrentUser();
+  Stream<User> get user;
 }

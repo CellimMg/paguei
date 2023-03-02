@@ -22,4 +22,6 @@ class Authentication {
   bool alreadySignedIn() {
     return _repository.alreadySignedIn();
   }
+
+  Stream<User> get user => _repository.user;
 }

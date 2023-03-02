@@ -49,4 +49,14 @@ class FirebaseAuthenticationDataSource implements IAuthenticationDataSource {
     );
   }
 
+  @override
+  Stream<domain.User> getUser() {
+    return _firebaseAuth.authStateChanges().map((user) => domain.User(
+        id: user!.uid,
+        name: user.displayName!,
+        email: user.email!,
+        pictureUrl: user.photoURL!
+    ));
+  }
+
 }

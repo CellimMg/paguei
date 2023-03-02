@@ -5,4 +5,5 @@ abstract class IAuthenticationDataSource {
   Future<bool> signOut();
   bool alreadySignedIn();
   User getCurrentUser();
+  Stream<User> getUser();
 }
