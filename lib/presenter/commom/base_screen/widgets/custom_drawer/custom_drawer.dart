@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:melembra/presenter/authentication/page/authentication_page.dart';
 import 'package:melembra/utils/providers.dart';
 
 import '../../../../../domain/usecases/authentication.dart';

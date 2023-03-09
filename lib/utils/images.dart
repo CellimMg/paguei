@@ -5,5 +5,4 @@ class ImagesRepository{
   static const String authImage = '$_imagesPath/auth_image.png';
   static const String iconGoogle = '$_iconsPath/icon_google.png';
   static const String iconBoleto = '$_iconsPath/icon_boleto.png';
-
 }
